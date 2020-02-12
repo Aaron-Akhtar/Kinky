@@ -29,6 +29,7 @@ public class CheckRunnable implements Runnable{
             connection.setRequestMethod("GET");
             connection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36");
             connection.setConnectTimeout(2000);
+            connection.getResponseCode();
             System.out.println(Colour.GREEN.get() + " - Found Proxy: " + host + ":" + port);
             Kinky.saveProxy(host + ":" + port);
         }catch (Exception e){

@@ -50,10 +50,15 @@ public class Kinky {
 
         System.out.println("Developed by Aaron Akhtar -> github.com/aaron-akhtar");
         Thread.sleep(5000);
+
         for (int i =0; i < 100; i++){
-            threadList.add(new Thread(new ScannerRunnable(timeout, proxyType)));
-            threadList.get(i).start();
-            System.out.println(Colour.BRIGHT_CYAN.get() + " - Starting Scanning Thread #" + i);
+            try {
+                threadList.add(new Thread(new ScannerRunnable(timeout, proxyType)));
+                threadList.get(i).start();
+                System.out.println(Colour.BRIGHT_CYAN.get() + " - Starting Scanning Thread #" + i);
+            }catch (Exception e){
+
+            }
         }
 
         while(true){
